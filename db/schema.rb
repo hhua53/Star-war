@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_201_014_204_218) do
+ActiveRecord::Schema.define(version: 2020_10_14_204218) do
+
   create_table "film_people", force: :cascade do |t|
     t.integer "film_id", null: false
     t.integer "people_id", null: false
