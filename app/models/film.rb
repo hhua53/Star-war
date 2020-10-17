@@ -5,4 +5,6 @@ class Film < ApplicationRecord
   has_many :planets, :through => :film_planets
   has_many :film_starships
   has_many :starships, :through => :film_starships
+
+  validates :title, presence: true, uniqueness: true
 end
