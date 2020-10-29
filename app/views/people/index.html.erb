@@ -16,8 +16,12 @@
     <% @people.each do |person| %>
       <tr>
         <td><%= person.name %></td>
-        <td><%= person.planet_id %></td>
-        <td><%= person.starship_ids %></td>
+        <td><%= link_to person.planet.name, person.planet %></td>
+        <td>
+          <% person.starships.each do |starship| %>
+            <p><%= link_to starship.name, starship %></p>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>

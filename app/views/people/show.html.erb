@@ -7,12 +7,21 @@
 
 <p>
   <strong>Planet:</strong>
-  <%= @person.planet_id %>
+   <%= link_to @person.planet.name, @person.planet %>
 </p>
 
 <p>
   <strong>Starship:</strong>
-  <%= @person.starship_id %>
+  <% @person.starships.each do |starship| %>
+    <p><%= link_to starship.name, starship %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Film:</strong>
+  <% @person.films.each do |film| %>
+    <p><%= film.title %></p>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
