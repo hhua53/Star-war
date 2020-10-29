@@ -5,5 +5,26 @@
   <%= @film.title %>
 </p>
 
+<p>
+  <strong>Character:</strong>
+  <% @film.people.each do |person| %>
+    <p><%= link_to person.name, person %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Planet:</strong>
+  <% @film.planets.each do |planet| %>
+    <p><%= link_to planet.name, planet %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Starship:</strong>
+  <% @film.starships.each do |starship| %>
+    <p><%= link_to starship.name, starship %></p>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>

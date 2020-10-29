@@ -10,6 +10,7 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
+    @people = Person.includes(:starships, :planet, :people)
   end
 
   # GET /films/new

@@ -10,6 +10,7 @@ class StarshipsController < ApplicationController
   # GET /starships/1
   # GET /starships/1.json
   def show
+    @starships = Starship.includes(:films)
   end
 
   # GET /starships/new

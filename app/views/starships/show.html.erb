@@ -5,5 +5,20 @@
   <%= @starship.name %>
 </p>
 
+<p>
+  <strong>Characters:</strong>
+  <% @starship.people.each do |person| %>
+    <p><%= link_to person.name, person %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Film:</strong>
+  <% @starship.films.each do |film| %>
+    <p><%= link_to film.title, film %></p>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_starship_path(@starship) %> |
 <%= link_to 'Back', starships_path %>

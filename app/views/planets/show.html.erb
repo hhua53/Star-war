@@ -10,5 +10,19 @@
   <%= @planet.population %>
 </p>
 
+<p>
+  <strong>Characters:</strong>
+  <% @planet.people.each do |person| %>
+    <p><%= link_to person.name, person %></p>
+  <% end %>
+</p>
+
+<p>
+  <strong>Film:</strong>
+  <% @planet.films.each do |film| %>
+    <p><%= link_to film.title, film %></p>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_planet_path(@planet) %> |
 <%= link_to 'Back', planets_path %>
