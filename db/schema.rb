@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_041443) do
+ActiveRecord::Schema.define(version: 2020_10_28_004708) do
 
   create_table "film_people", force: :cascade do |t|
     t.integer "film_id", null: false
-    t.integer "people_id", null: false
+    t.integer "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["film_id"], name: "index_film_people_on_film_id"
-    t.index ["people_id"], name: "index_film_people_on_people_id"
+    t.index ["person_id"], name: "index_film_people_on_person_id"
   end
 
   create_table "film_planets", force: :cascade do |t|
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_041443) do
   end
 
   add_foreign_key "film_people", "films"
-  add_foreign_key "film_people", "people", column: "people_id"
+  add_foreign_key "film_people", "people"
   add_foreign_key "film_planets", "films"
   add_foreign_key "film_planets", "planets"
   add_foreign_key "film_starships", "films"
