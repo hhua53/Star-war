@@ -22,6 +22,11 @@ class FilmsController < ApplicationController
   def edit
   end
 
+  def search
+    wildcard_search = "%#{params[:keywords]}%"
+    @films = Film.where("title LIKE ?", wildcard_search)
+  end
+
   # POST /films
   # POST /films.json
   def create

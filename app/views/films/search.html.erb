@@ -1,0 +1,7 @@
+<p class="mb-5">Films found: <%= params[:keywords] %></p>
+
+<ul>
+  <% @films.each do |f|%>
+    <li><%= link_to f.title, f %></li>
+  <% end %>
+</ul>
