@@ -8,6 +8,9 @@
 <p>
   <strong>Population:</strong>
   <%= @planet.population %>
+  <% if @planet.population.to_i < 200000 %>
+    <p>Population is lower than 200000.</p>
+  <% end %>
 </p>
 
 <p>
